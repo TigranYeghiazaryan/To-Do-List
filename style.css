@@ -25,3 +25,27 @@ body{
     display: flex;
     align-items: center;
 }
+
+.form input{
+    flex: 1;
+    padding: 0.7rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.form .btn{
+    padding: 0.7rem;
+    background-color: darkblue;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.lists .todo{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
