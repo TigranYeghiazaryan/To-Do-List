@@ -1,20 +1,30 @@
-const form = document.querySelector("[data-form]");
-const lists = document.querySelector("[data-lists");
-const input = document.querySelector("[data-input]");
+function addTask() {
+    var inputValue = document.getElementById("new-task").value;
 
-let todoArr = [];
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let id = Math.random() + 1000000;
-    const todo = new ToDo(id, input.value)
-    todoArr = [...todoArr, todo];
-    console.log(todoArr)
-});
+    if (inputValue !== "") {
+      var newTaskItem = document.createElement("li");
 
-class ToDo {
-    constructor(id, todo){
-        this.id = id;
-        this.todo = todo;
+
+      var taskText = document.createTextNode(inputValue);
+
+
+      var deleteButton = document.createElement("button");
+      deleteButton.innerHTML = "Delete";
+      deleteButton.className = "delete-btn";
+      deleteButton.addEventListener("click", function () {
+
+        newTaskItem.remove();
+      });
+
+
+      newTaskItem.appendChild(taskText);
+      newTaskItem.appendChild(deleteButton);
+
+
+      document.getElementById("tasks-list").appendChild(newTaskItem);
+
+
+      document.getElementById("new-task").value = "";
     }
-}
+  }
